@@ -4,7 +4,6 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,70 +26,66 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
-import androidx.constraintlayout.compose.Dimension
 import com.example.currencyconverter.R
 
 @Composable
 fun HomeScreen() {
 
-    Column {
-
-    }
-    var isConvertClick by remember {
-        mutableStateOf(true)
-    }
-
-    var isCompareClick by remember {
-        mutableStateOf(false)
-    }
-
-    ConstraintLayout {
-        val ( topapp,custom, convertAndCompare) =createRefs()
-
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .constrainAs(topapp) {
-                    top.linkTo(parent.top)
-                    start.linkTo(parent.start)
-                    end.linkTo(parent.end)
-                }
-        ) {
-            TopApp()
+        var isConvertClick by remember {
+            mutableStateOf(true)
         }
 
-        Box(
-            modifier = Modifier
-                .constrainAs(custom) {
-                    top.linkTo(parent.top , margin = 215.dp)
-                    start.linkTo(parent.start)
-                    end.linkTo(parent.end)
-                }
-        ) {
-            CustomToggleButton(onConvertClick = { isConvertClick = true
-            isCompareClick=false} ) {
-                isConvertClick =false
-                isCompareClick =true
-            }
+        var isCompareClick by remember {
+            mutableStateOf(false)
         }
 
-        Box(
-            modifier = Modifier
-                .constrainAs(convertAndCompare) {
-                    top.linkTo(topapp.bottom )
-                    start.linkTo(parent.start)
-                    end.linkTo(parent.end)
-                }
-        ) {
-            AnimatedVisibility(visible = isConvertClick) {
-                ConvertCard()
+        ConstraintLayout {
+            val ( topapp,custom, convertAndCompare) =createRefs()
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .constrainAs(topapp) {
+                        top.linkTo(parent.top)
+                        start.linkTo(parent.start)
+                        end.linkTo(parent.end)
+                    }
+            ) {
+                TopApp()
             }
 
-            AnimatedVisibility(visible = isCompareClick) {
-                CompareCard()
+            Box(
+                modifier = Modifier
+                    .constrainAs(custom) {
+                        top.linkTo(parent.top , margin = 215.dp)
+                        start.linkTo(parent.start)
+                        end.linkTo(parent.end)
+                    }
+            ) {
+                CustomToggleButton(onConvertClick = { isConvertClick = true
+                    isCompareClick=false} ) {
+                    isConvertClick =false
+                    isCompareClick =true
+                }
+            }
+
+            Box(
+                modifier = Modifier
+                    .constrainAs(convertAndCompare) {
+                        top.linkTo(topapp.bottom )
+                        start.linkTo(parent.start)
+                        end.linkTo(parent.end)
+                    }
+            ) {
+                AnimatedVisibility(visible = isConvertClick) {
+                    ConvertCard()
+                }
+
+                AnimatedVisibility(visible = isCompareClick) {
+                    CompareCard()
+                }
             }
         }
-    }
 
         Row {
             Text(
@@ -131,5 +126,6 @@ fun HomeScreen() {
             modifier = Modifier.padding(start = 20.dp, top = 10.dp)
         )
 
-        Spacer(modifier = Modifier.height(50.dp))
-}
+        //Spacer(modifier = Modifier.height(50.dp))
+    }
+

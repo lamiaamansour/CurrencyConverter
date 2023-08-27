@@ -28,7 +28,6 @@ import com.example.currencyconverter.R
 
 data class DropDownItem(val currencyCode: String, @DrawableRes val flagId: Int)
 
-
 @Composable
 fun CurrencyDropDown(modifier: Modifier) {
     val currencies = listOf(

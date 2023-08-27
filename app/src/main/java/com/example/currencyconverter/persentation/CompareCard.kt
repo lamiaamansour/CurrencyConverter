@@ -31,6 +31,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.mydropdown.ui.CurrencyDropdown
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -85,12 +86,12 @@ fun CompareCard() {
                     keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
                     singleLine = true,
                     modifier = Modifier
-                        .width(160.dp)
+                        .weight(1f)
                         .clip(CircleShape)
                 )
 
                 Spacer(modifier = Modifier.width(10.dp))
-                CurrencyDropDown(Modifier)
+                CurrencyDropdown(Modifier.weight(1f))
             }
 
             Spacer(modifier = Modifier.height(15.dp))
@@ -106,6 +107,7 @@ fun CompareCard() {
                         .weight(1f)
                         .padding(8.dp)
                 )
+
                 Spacer(modifier = Modifier.width(10.dp))
                 Text(
                     text = "Targeted currency", style = TextStyle(
@@ -122,9 +124,9 @@ fun CompareCard() {
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                CurrencyDropDown(modifier = Modifier.weight(1f))
+                CurrencyDropdown(modifier = Modifier.weight(1f) )
                 Spacer(modifier = Modifier.width(10.dp))
-                CurrencyDropDown(modifier = Modifier.weight(1f))
+                CurrencyDropdown(modifier = Modifier.weight(1f) )
             }
 
             Spacer(modifier = Modifier.height(15.dp))
@@ -134,15 +136,13 @@ fun CompareCard() {
                 horizontalArrangement = Arrangement.SpaceBetween
             )
             {
-                val shape = CircleShape
-
                     Text(
                         text = "", style = TextStyle(
                             color = Color.Black,
                             fontWeight = FontWeight.Bold
                         ), modifier = Modifier
                             .width(170.dp)
-                            .border(2.dp, MaterialTheme.colorScheme.inverseOnSurface, shape)
+                            .border(2.dp, MaterialTheme.colorScheme.inverseOnSurface, shape= CircleShape)
                             .padding(16.dp)
                     )
 
@@ -157,7 +157,7 @@ fun CompareCard() {
                             fontWeight = FontWeight.Bold
                         ), modifier = Modifier
                             .width(170.dp)
-                            .border(2.dp, MaterialTheme.colorScheme.inverseOnSurface, shape)
+                            .border(2.dp, MaterialTheme.colorScheme.inverseOnSurface, shape= CircleShape)
                             .padding(16.dp)
                     )
                 }

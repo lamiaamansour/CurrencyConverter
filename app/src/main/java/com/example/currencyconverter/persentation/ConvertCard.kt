@@ -31,6 +31,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.mydropdown.ui.CurrencyDropdown
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -84,14 +85,14 @@ fun ConvertCard() {
                 keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
                 singleLine = true,
                 modifier = Modifier
-                    .width(160.dp)
+                    .weight(1f)
                     .clip(CircleShape)
             )
 
-
             Spacer(modifier = Modifier.width(10.dp))
 
-            CurrencyDropDown(Modifier)
+            CurrencyDropdown(Modifier.weight(1f))
+
         }
 
         Spacer(modifier = Modifier.height(15.dp))
@@ -126,7 +127,7 @@ fun ConvertCard() {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            CurrencyDropDown(modifier = Modifier.weight(1f))
+            CurrencyDropdown(modifier = Modifier.weight(1f) )
 
             Spacer(modifier = Modifier.width(10.dp))
 
@@ -135,8 +136,12 @@ fun ConvertCard() {
                         color = Color.Black,
                         fontWeight = FontWeight.Bold
                     ), modifier = Modifier
-                        .width(150.dp)
-                        .border(2.dp, MaterialTheme.colorScheme.inverseOnSurface, shape= CircleShape)
+                        .weight(1f)
+                        .border(
+                            2.dp,
+                            MaterialTheme.colorScheme.inverseOnSurface,
+                            shape = CircleShape
+                        )
                         .padding(16.dp)
                         .weight(1f)
                 )

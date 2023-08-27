@@ -1,4 +1,4 @@
-package com.example.currencyconverter.persentation
+package com.example.currencyconverter.Screen
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -14,7 +14,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text

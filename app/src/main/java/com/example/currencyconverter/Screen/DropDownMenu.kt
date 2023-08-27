@@ -1,4 +1,4 @@
-package com.example.currencyconverter.persentation
+package com.example.currencyconverter.Screen
 
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api

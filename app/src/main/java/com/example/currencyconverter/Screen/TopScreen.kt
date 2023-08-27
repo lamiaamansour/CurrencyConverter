@@ -1,4 +1,4 @@
-package com.example.currencyconverter.persentation
+package com.example.currencyconverter.Screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -70,12 +70,6 @@ fun TopApp() {
                         .padding(top = 105.dp)
                 )
             }
-
         }
-
-
-
-
-
     }
 

@@ -1,4 +1,4 @@
-package com.example.currencyconverter.persentation
+package com.example.currencyconverter.Screen
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
